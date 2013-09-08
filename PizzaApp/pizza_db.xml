@@ -1,0 +1,450 @@
+<?xml version="1.0"?>
+<Menu>
+    <Category name="Pizzas">
+        <Product name="Tomato &amp; Cheese">
+            <Price type="small">5.50</Price>
+            <Price type="large">9.75</Price>
+        </Product>
+        <Product name="Onions">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Peppers">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Broccoli">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Fresh Garlic">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Mushrooms">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Fresh Spinach">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Anchovies">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Hamburg">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Pepperoni">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Sausage">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Meatball">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Bacon">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Ham">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Olives">
+            <Price type="small">6.85</Price>
+            <Price type="large">10.85</Price>
+        </Product>
+        <Product name="Grilled Chicken">
+            <Price type="small">7.95</Price>
+            <Price type="large">11.80</Price>
+        </Product>
+        <Product name="Hawaiian">
+            <Price type="small">7.95</Price>
+            <Price type="large">11.80</Price>
+        </Product>
+        <Product name="2-way Combo">
+            <Price type="small">7.95</Price>
+            <Price type="large">11.80</Price>
+        </Product>
+        <Product name="3-way Combo">
+            <Price type="small">8.90</Price>
+            <Price type="large">12.80</Price>
+        </Product>
+        <Product name="Extra Cheese">
+            <Price type="small">1.25</Price>
+            <Price type="large">1.85</Price>
+        </Product>
+    </Category>
+    <Category name="Speciality Pizzas">
+        <Product name="Three Aces Special">
+            <Price type="small">9.80</Price>
+            <Price type="large">15.80</Price>
+        </Product>
+        <Product name="Mediterranean Sliced Tomatoes, Olives, Spinach, Fresh Garlic, Mozzarella &amp; Feta Cheese">
+            <Price type="small">9.80</Price>
+            <Price type="large">15.80</Price>
+        </Product>
+        <Product name="Vegetarian Sliced Tomatoes, Onion, Peppers, Mushrooms,Broccoli, Mozzarella ">
+            <Price type="small">9.80</Price>
+            <Price type="large">15.80</Price>
+        </Product>
+        <Product name="Meat Lovers Pepperoni, Hamburg, Sausage &amp; Bacon">
+            <Price type="small">9.80</Price>
+            <Price type="large">15.80</Price>
+        </Product>
+        <Product name="Bbq Grilled Chicken Choice Of Vegetables">
+            <Price type="small">9.80</Price>
+            <Price type="large">15.80</Price>
+        </Product>
+        <Product name="Grecian Supreme Grilled Chicken, Feta Cheese, Tomatoes, Kalamata Olives">
+            <Price type="small">9.80</Price>
+            <Price type="large">15.80</Price>
+        </Product>
+    </Category>
+    <Category name="Special Dinners" note="All Dinners served with French Fries and Salad">
+        <Product name="Chicken Wing Dinner">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="Gyro Plate">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="Chicken Finger Plate">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="3 Piece Chicken Dinner">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="Cheeseburger or Chicken Burger Plate">
+            <Price type="medium">5.25</Price>
+        </Product>
+        <Product name="Double-cheeseburger Plate">
+            <Price type="medium">5.75</Price>
+        </Product>
+        <Product name="Chicken Kabob Plate With rice, salad &amp; pita bread ">
+            <Price type="medium">7.85</Price>
+        </Product>
+        <Product name="Steak Tips Dinner Served with side salad &amp; french fries">
+            <Price type="medium">8.25</Price>
+        </Product>
+        <Product name="Fish &amp; Chips Dinner Served with side salad, french fries &amp; tartar sauce">
+            <Price type="medium">7.25</Price>
+        </Product>
+    </Category>
+    <Category name="Side Orders">
+        <Product name="Onion Rings">
+            <Price type="medium">2.95</Price>
+        </Product>
+        <Product name="French Fries">
+            <Price type="medium">2.65</Price>
+        </Product>
+        <Product name="Spicy Fries">
+            <Price type="medium">2.95</Price>
+        </Product>
+        <Product name="Chicken Wings">
+            <Price type="medium">5.75</Price>
+        </Product>
+        <Product name="Buffalo Wings">
+            <Price type="medium">5.75</Price>
+        </Product>
+        <Product name="Chicken Fingers">
+            <Price type="medium">5.75</Price>
+        </Product>
+        <Product name="Mozzarella Sticks(7 Pieces)">
+            <Price type="medium">4.50</Price>
+        </Product>
+        <Product name="Slice Cheese Pizza">
+            <Price type="medium">1.65</Price>
+        </Product>
+        <Product name="Slice Pepperoni Pizza">
+            <Price type="medium">1.85</Price>
+        </Product>
+        <Product name="Homemade Spinach Pie">
+            <Price type="medium">3.10</Price>
+        </Product>
+        <Product name="Buffalo Fingers">
+            <Price type="medium">5.75</Price>
+        </Product>
+        <Product name="Chicken Burger">
+            <Price type="medium">2.75</Price>
+        </Product>
+        <Product name="Cheeseburger">
+            <Price type="medium">2.75</Price>
+        </Product>
+        <Product name="Spanakopita">
+            <Price type="medium">3.25</Price>
+        </Product>
+    </Category>
+    <Category name="Salads">
+        <Product name="Garden">
+            <Price type="small">3.50</Price>
+            <Price type="large">4.50</Price>
+        </Product>
+        <Product name="Greek">
+            <Price type="small">4.50</Price>
+            <Price type="large">5.50</Price>
+        </Product>
+        <Product name="Antipasto">
+            <Price type="small">4.50</Price>
+            <Price type="large">5.50</Price>
+        </Product>
+        <Product name="Chef">
+            <Price type="small">4.50</Price>
+            <Price type="large">5.50</Price>
+        </Product>
+        <Product name="Tuna">
+            <Price type="small">4.50</Price>
+            <Price type="large">5.50</Price>
+        </Product>
+        <Product name="Grilled Chicken">
+            <Price type="small">4.95</Price>
+            <Price type="large">5.95</Price>
+        </Product>
+        <Product name="Kabob Salad With grilled Chicken &amp; feta Hamburger cheese">
+            <Price type="small">5.45</Price>
+            <Price type="large">6.45</Price>
+        </Product>
+    </Category>
+    <Category name="Spaghetti Or Ziti">
+        <Product name="With Sauce">
+            <Price type="medium">5.40</Price>
+        </Product>
+        <Product name="With Sausage">
+            <Price type="medium">6.45</Price>
+        </Product>
+        <Product name="With Meat Ball">
+            <Price type="medium">6.45</Price>
+        </Product>
+        <Product name="With Veal">
+            <Price type="medium">6.45</Price>
+        </Product>
+        <Product name="With Chicken Cutlet">
+            <Price type="medium">6.45</Price>
+        </Product>
+        <Product name="With Mushrooms">
+            <Price type="medium">6.45</Price>
+        </Product>
+        <Product name="A La Three Aces Sausage, Mushrooms, Bacon &amp; Ham Topped with Sauce &amp; Mozzarella Cheese">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="Eggplant Spaghetti or Ziti Dinner With Mozzarella Cheese">
+            <Price type="medium">7.25</Price>
+        </Product>
+    </Category>
+    <Category name="Home made Lasagna Ravioli or Manicotti" note="All Pasta Dinners Served with Garlic Bread and Salad">
+        <Product name="With Sauce">
+            <Price type="medium">6.25</Price>
+        </Product>
+        <Product name="With Sausage">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="With Meat Ball">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="With Veal">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="With Chicken Cutlet">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="With Mushrooms">
+            <Price type="medium">7.25</Price>
+        </Product>
+        <Product name="Veggie Lasagna">
+            <Price type="medium">7.25</Price>
+        </Product>
+    </Category>
+    <Category name="Homemade Calzones">
+        <Product name="Vegetarian">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Sausage">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Ham &amp; Cheese">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Chicken Cutlet">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Grilled Chicken">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Meatball">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Grecian">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Veal">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Eggplant">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Steak">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Italian All the above come with mushrooms, peppers &amp; onions">
+            <Price type="large">7.35</Price>
+        </Product>
+        <Product name="Grecian Fresh Tomatoes, Spinach, Feta ">
+            <Price type="large">7.35</Price>
+        </Product>
+    </Category>
+    <Category name="Wraps">
+        <Product name="Turkey Club Wrap Turkey, Cheese, Lettuce, Tomato, Onion, Mayo">
+            <Price type="medium">4.95</Price>
+        </Product>
+        <Product name="Chicken Cobb Grilled Chicken, Bacon, Cheese, Lettuce, Tomato, Onion, Honey Mustard ">
+            <Price type="medium">4.95</Price>
+        </Product>
+        <Product name="Greek Supreme Feta Cheese, Black Olives, Lettuce, Tomato, Onion, Greek Dressing">
+            <Price type="medium">4.95</Price>
+        </Product>
+        <Product name="Crispy Chicken Chicken Finger, Lettuce, Tomato, Onion, Honey Mustard">
+            <Price type="medium">4.95</Price>
+        </Product>
+        <Product name="Steak Wrap">
+            <Price type="medium">4.95</Price>
+        </Product>
+    </Category>
+    <Category name="Grinders">
+        <Product name="Meatless">
+            <Price type="small">4.50</Price>
+            <Price type="large">4.95</Price>
+        </Product>
+        <Product name="Hamburger">
+            <Price type="small">4.50</Price>
+            <Price type="large">4.95</Price>
+        </Product>
+        <Product name="Cheeseburger">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Meatball">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Sausage">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="American">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Veal Cutlet">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Hot Pastrami">
+            <Price type="small">4.95</Price>
+            <Price type="large">5.95</Price>
+        </Product>
+        <Product name="Italian">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Genoa Salami">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Ham">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Tuna">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Roast Beef">
+            <Price type="small">4.95</Price>
+            <Price type="large">5.95</Price>
+        </Product>
+        <Product name="B.l.t. Bacon, Lettuce, Tomato">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Sliced Turkey">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Three Aces Special Turkey, Roast Beef &amp; Bacon">
+            <Price type="small">5.30</Price>
+            <Price type="large">6.40</Price>
+        </Product>
+        <Product name="Cheese Steak">
+            <Price type="small">5.10</Price>
+            <Price type="large">6.00</Price>
+        </Product>
+        <Product name="Onion Steak">
+            <Price type="small">5.20</Price>
+            <Price type="large">6.20</Price>
+        </Product>
+        <Product name="Pepper Steak">
+            <Price type="small">5.20</Price>
+            <Price type="large">6.20</Price>
+        </Product>
+        <Product name="Mushroom Steak">
+            <Price type="small">5.20</Price>
+            <Price type="large">6.20</Price>
+        </Product>
+        <Product name="Special Steak">
+            <Price type="small">5.40</Price>
+            <Price type="large">6.40</Price>
+        </Product>
+        <Product name="Steak Bomb Each Additional Item on Steak Subs $0.25/$0.40">
+            <Price type="small">5.50</Price>
+            <Price type="large">6.50</Price>
+        </Product>
+        <Product name="Pepper &amp; Egg">
+            <Price type="small">4.50</Price>
+            <Price type="large">4.95</Price>
+        </Product>
+        <Product name="Ham &amp; Egg">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Steak &amp; Egg">
+            <Price type="small">5.60</Price>
+            <Price type="large">6.50</Price>
+        </Product>
+        <Product name="Bacon &amp; Egg">
+            <Price type="small">5.30</Price>
+            <Price type="large">6.40</Price>
+        </Product>
+        <Product name="Chicken Cutlet">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Eggplant &amp; Cheese">
+            <Price type="small">4.75</Price>
+            <Price type="large">5.75</Price>
+        </Product>
+        <Product name="Gyro On Pita">
+            <Price type="large">5.50</Price>
+        </Product>
+        <Product name="Grilled Chicken On Pita">
+            <Price type="large">5.25</Price>
+        </Product>
+        <Product name="Grilled Chicken Delight">
+            <Price type="small">5.50</Price>
+            <Price type="large">6.50</Price>
+        </Product>
+        <Product name="Grilled Chicken Sub">
+            <Price type="small">5.25</Price>
+            <Price type="large">5.85</Price>
+        </Product>
+        <Product name="Chicken Finger Sub">
+            <Price type="small">4.60</Price>
+            <Price type="large">5.60</Price>
+        </Product>
+    </Category>
+</Menu>
