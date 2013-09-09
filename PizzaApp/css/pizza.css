@@ -14,7 +14,7 @@
 }
 
 .product {
-    margin: 0.5em 0;
+    margin: 0.4em 0;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
@@ -25,6 +25,13 @@
 .note {
     margin: 1em 0;
     color: red;
+}
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 header {
