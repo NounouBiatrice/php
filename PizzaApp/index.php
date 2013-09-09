@@ -13,77 +13,84 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the top bar */
         }
     </style>
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
+    <script src="js/html5shiv.js"></script>
     <![endif]-->
 </head>
+
 <body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
+
+<?php
+$xmlMenu = simplexml_load_file('pizza_db.xml');
+$left = true;
+?>
+
 <header class="jumbotron subhead">
     <div class="container">
         <img src="img/pizza_big.png">
+
         <h1 class="muted">Pizza ML</h1>
     </div>
 </header>
 
 <div class="container">
-    <div class="jumbotron">
-
-    </div>
-
     <form action="process_order.php" method="post">
-        <?php
-        $xmlMenu = simplexml_load_file('pizza_db.xml');
-        $left = true;
 
-        foreach ($xmlMenu->Category as $category) {
-            if ($left) {
-                echo '<div class="row">';
-            }
+        <?php foreach ($xmlMenu->Category as $category) : ?>
+            <?php if ($left) : ?>
+                <div class="row">
+            <?php endif ?>
 
-            echo '<div class="span5">';
+            <div class="span5">
 
-            echo '<div class="category">' . $category["name"] . '</div>';
+                <div class="category">
+                    <?php print($category["name"]) ?>
+                </div>
 
-            foreach ($category->Product as $product) {
-                echo '<div class="row product">';
-                echo '<div class="span2">';
-                echo $product["name"];
-                echo '</div>';
+                <?php foreach ($category->Product as $product) : ?>
+                    <div class="row product">
+                        <div class="span2">
+                            <?php print($product["name"]) ?>
+                        </div>
 
-                echo '<div class="span1">';
-                echo '$'.$product->Price[0];
-                echo '</div>';
-                echo '<div class="span1">';
-                $price2 = $product->Price[1];
-                echo empty($price2) ? '-' : '$'.$product->Price[1];
-                echo '</div>';
+                        <div class="span1">
+                            <?php print('$' . $product->Price[0]) ?>
+                        </div>
+                        <div class="span1">
+                            <?php
+                            $price2 = $product->Price[1];
+                            echo empty($price2) ? '-' : '$' . $product->Price[1];
+                            ?>
+                        </div>
 
-                echo '<div class="span1">';
-                echo '<button class="btn btn-mini"><i class="icon-plus"></i></button>';
-                echo '</div>';
-                echo '</div>';
-            }
+                        <div class="span1">
+                            <button class="btn btn-mini"><i class="icon-plus"></i></button>
+                        </div>
+                    </div>
+                <?php endforeach ?>
 
-            $note = $category['note'];
-            if (!empty($note)) {
-                echo '<p class="note"><small>'.$note.'*</small></p>';
-            }
+                <?php $note = $category['note']; ?>
 
-            echo '</div>';
+                <?php if (!empty($note)) : ?>
+                    <p class="note">
+                        <small> <?php print($note) ?> *</small>
+                    </p>
+                <?php endif ?>
 
-            if (!$left) {
-                echo '</div>';
-            }
+            </div>
 
-            $left = !$left;
-        }
-        ?>
+            <?php if (!$left) : ?>
+                </div>
+            <?php endif ?>
+
+            <?php $left = !$left; ?>
+        <?php endforeach ?>
 
         <button class="btn btn-success btn-large"><i class="icon-white icon-ok"></i> Submit Order</button>
     </form>
