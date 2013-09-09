@@ -76,7 +76,7 @@
         <form action="process_order.php" method="post">
 
             <?php foreach ($xmlMenu->Category as $category) : ?>
-                <a id="<?php print($category["name"]) ?>" />
+                <a id="<?php print($category["name"]) ?>"></a>
                 <?php if ($left) : ?>
                     <div class="row">
                 <?php endif ?>
