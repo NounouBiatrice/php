@@ -1,8 +1,14 @@
 <?php
-    session_start();
+session_start();
 
-    $xmlMenu = simplexml_load_file('pizza_db.xml');
-    $left = true;
+$xmlMenu = simplexml_load_file('pizza_db.xml');
+$categoryCounter = 0;
+
+/*
+ * 1. Shopping cart
+ * 2. Logging mechanism ?
+ * 3. Saving order to xml
+ */
 ?>
 
 <!DOCTYPE html>
@@ -33,102 +39,153 @@
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="brand" href="#">Three Aces's Pizza</a>
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <?php foreach ($xmlMenu->Category as $category) : ?>
-                                    <li>
-                                        <a href="#<?php print($category["name"]) ?>">
-                                            <?php print($category["name"]) ?>
-                                        </a>
-                                    </li>
-                                <?php endforeach ?>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p class="navbar-text pull-right">
-                        Logged in as <a href="#" class="navbar-link">Username</a>
-                    </p>
-                </div><!--/.nav-collapse -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Three Aces's Pizza</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <?php foreach ($xmlMenu->Category as $category) : ?>
+                                <li>
+                                    <a href="#<?php print($category["name"]) ?>">
+                                        <?php print($category["name"]) ?>
+                                    </a>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="navbar-text pull-right">
+                    Logged in as <a href="#" class="navbar-link">Username</a>
+                </p>
             </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="hero-unit">
+        <div class="center">
+            <img class="" src="img/pizza_big.png">
+
+            <h2 class="muted center">Three Aces's Pizza®</h2>
         </div>
     </div>
 
-    <div class="container">
-        <div class="hero-unit">
-            <div class="center">
-                <img class="" src="img/pizza_big.png">
-                <h2 class="muted center">Three Aces's Pizza®</h2>
-            </div>
-        </div>
+    <div class="row">
 
-        <form action="process_order.php" method="post">
+        <div class="span7">
 
-            <?php foreach ($xmlMenu->Category as $category) : ?>
-                <a id="<?php print($category["name"]) ?>"></a>
-                <?php if ($left) : ?>
-                    <div class="row">
-                <?php endif ?>
+            <form action="process_order.php" method="post">
 
-                <div class="span6">
+                <div class="accordion" id="accordion2">
 
-                    <div class="category">
-                        <?php print($category["name"]) ?>
-                    </div>
+                    <?php foreach ($xmlMenu->Category as $category) : ?>
+                        <a id="<?php print($category["name"]) ?>"></a>
 
-                    <?php foreach ($category->Product as $product) : ?>
-                        <div class="row product">
-                            <div class="span2">
-                                <?php print($product["name"]) ?>
+                        <div class="accordion-group">
+
+                            <div class="category accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                                   href="#collapse<?php print($categoryCounter) ?>">
+                                    <?php print($category["name"]) ?>
+                                </a>
                             </div>
 
-                            <div class="span1">
-                                <?php print('$' . $product->Price[0]) ?>
-                            </div>
-                            <div class="span1">
-                                <?php
-                                $price2 = $product->Price[1];
-                                echo empty($price2) ? '-' : '$' . $product->Price[1];
-                                ?>
+                            <div id="collapse<?php print($categoryCounter) ?>" class="accordion-body collapse <?php if ($categoryCounter == 0) print("in") ?>">
+
+                                <div class="row product accordion-inner header">
+                                    <div class="span2">Name</div>
+                                    <div class="span1">Small</div>
+                                    <div class="span1">Medium</div>
+                                    <div class="span1">Large</div>
+                                    <div class="span1">Add</div>
+                                </div>
+
+                                <?php foreach ($category->Product as $product) : ?>
+
+                                    <div class="row product accordion-inner">
+                                        <div class="span2">
+                                            <?php print($product["name"]) ?>
+                                        </div>
+
+                                        <?php
+                                            unset($small);
+                                            unset($medium);
+                                            unset($large);
+
+                                            foreach ($product->Price as $price) {
+                                                if (isset($price['type'])) {
+                                                    switch ((string) $price['type']) {
+                                                        case 'small':
+                                                            $small = $price;
+                                                            break;
+                                                        case 'medium':
+                                                            $medium = $price;
+                                                            break;
+                                                        case 'large':
+                                                            $large = $price;
+                                                            break;
+                                                    }
+                                                }
+                                            }
+
+                                        ?>
+
+                                        <div class="span1">
+                                            <?php print(isset($small) ? '$' . $small : '-'); ?>
+                                        </div>
+                                        <div class="span1">
+                                            <?php print(isset($medium) ? '$' . $medium: '-'); ?>
+                                        </div>
+                                        <div class="span1">
+                                            <?php print(isset($large) ? '$' . $large : '-'); ?>
+                                        </div>
+
+                                        <div class="span1">
+                                            <button class="btn btn-mini"><i class="icon-plus"></i></button>
+                                        </div>
+
+                                    </div>
+                                <?php endforeach ?>
+
+                                <?php $note = $category['note']; ?>
+
+                                <?php if (!empty($note)) : ?>
+                                    <p class="note accordion-inner">
+                                        <small> <?php print($note) ?> *</small>
+                                    </p>
+                                <?php endif ?>
+
                             </div>
 
-                            <div class="span1">
-                                <button class="btn btn-mini"><i class="icon-plus"></i></button>
-                            </div>
                         </div>
+                        <?php $categoryCounter++ ?>
                     <?php endforeach ?>
-
-                    <?php $note = $category['note']; ?>
-
-                    <?php if (!empty($note)) : ?>
-                        <p class="note">
-                            <small> <?php print($note) ?> *</small>
-                        </p>
-                    <?php endif ?>
 
                 </div>
 
-                <?php if (!$left) : ?>
-                    </div>
-                <?php endif ?>
+            </form>
 
-                <?php $left = !$left; ?>
-            <?php endforeach ?>
+        </div>
 
+        <div class="span5">
+            <div class="category">Shopping Cart</div>
             <button class="btn btn-success btn-large"><i class="icon-white icon-ok"></i> Submit Order</button>
-        </form>
+        </div>
+
     </div>
+</div>
 
 <div id="footer">
     <div class="container">
