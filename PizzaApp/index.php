@@ -4,6 +4,19 @@ session_start();
 $xmlMenu = simplexml_load_file('pizza_db.xml');
 $categoryCounter = 0;
 
+$priceTypes = ['small', 'medium', 'large'];
+
+function findPrice($product, $priceType)
+{
+    return array_shift($product->xpath("Price[@type='$priceType']"));
+}
+
+function displayPrice($product, $priceType)
+{
+    $price = findPrice($product, $priceType);
+    print(isset($price) ? '$' . number_format((double)$price, 2) : '-');
+}
+
 /*
  * 1. Shopping cart
  * 2. Logging mechanism ?
@@ -55,9 +68,10 @@ $categoryCounter = 0;
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <?php foreach ($xmlMenu->Category as $category) : ?>
+                                <?php $categoryName = $category["name"] ?>
                                 <li>
-                                    <a href="#<?php print($category["name"]) ?>">
-                                        <?php print($category["name"]) ?>
+                                    <a href="#<?php print($categoryName) ?>">
+                                        <?php print($categoryName) ?>
                                     </a>
                                 </li>
                             <?php endforeach ?>
@@ -102,7 +116,8 @@ $categoryCounter = 0;
                                 </a>
                             </div>
 
-                            <div id="collapse<?php print($categoryCounter) ?>" class="accordion-body collapse <?php if ($categoryCounter == 0) print("in") ?>">
+                            <div id="collapse<?php print($categoryCounter) ?>"
+                                 class="accordion-body collapse <?php if ($categoryCounter == 0) print("in") ?>">
 
                                 <div class="row product accordion-inner header">
                                     <div class="span2">Name</div>
@@ -119,38 +134,11 @@ $categoryCounter = 0;
                                             <?php print($product["name"]) ?>
                                         </div>
 
-                                        <?php
-                                            unset($small);
-                                            unset($medium);
-                                            unset($large);
-
-                                            foreach ($product->Price as $price) {
-                                                if (isset($price['type'])) {
-                                                    switch ((string) $price['type']) {
-                                                        case 'small':
-                                                            $small = $price;
-                                                            break;
-                                                        case 'medium':
-                                                            $medium = $price;
-                                                            break;
-                                                        case 'large':
-                                                            $large = $price;
-                                                            break;
-                                                    }
-                                                }
-                                            }
-
-                                        ?>
-
-                                        <div class="span1">
-                                            <?php print(isset($small) ? '$' . $small : '-'); ?>
-                                        </div>
-                                        <div class="span1">
-                                            <?php print(isset($medium) ? '$' . $medium: '-'); ?>
-                                        </div>
-                                        <div class="span1">
-                                            <?php print(isset($large) ? '$' . $large : '-'); ?>
-                                        </div>
+                                        <?php foreach ($priceTypes as $priceType) : ?>
+                                            <div class="span1">
+                                                <?php displayPrice($product, $priceType); ?>
+                                            </div>
+                                        <?php endforeach ?>
 
                                         <div class="span1">
                                             <button class="btn btn-mini"><i class="icon-plus"></i></button>
@@ -161,7 +149,7 @@ $categoryCounter = 0;
 
                                 <?php $note = $category['note']; ?>
 
-                                <?php if (!empty($note)) : ?>
+                                <?php if (isset($note)) : ?>
                                     <p class="note accordion-inner">
                                         <small> <?php print($note) ?> *</small>
                                     </p>
